@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <script src="./js/jquery-3.7.0.min.js"></script>
 <!-- <link rel="icon" href="./img/favicon.ico" type="image/x-icon"> -->
+<header>
 <nav>
 	<div class="menu">
 		<div class="menu_left">
@@ -30,6 +31,7 @@
 		</div>
 	</div>
 </nav>
+</header>
 <script>
 	function link(url) {
 		location.href = "./" + url;
