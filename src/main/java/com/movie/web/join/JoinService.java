@@ -13,7 +13,7 @@ public class JoinService {
 
 	public int join(JoinDTO joinDTO) {
 		//생일을 합치기
-	    String birth = joinDTO.getBirthYear()+joinDTO.getBirthMonth()+joinDTO.getBirthDay();
+	    String birth = joinDTO.getBirthYear()+"-"+joinDTO.getBirthMonth()+"-"+joinDTO.getBirthDay();
 	    joinDTO.setBirth(birth);
 	    System.out.println(birth);
 		

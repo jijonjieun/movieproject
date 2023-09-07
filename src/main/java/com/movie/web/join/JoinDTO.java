@@ -51,7 +51,7 @@ public class JoinDTO {
     // 생성자에서 생년월일을 합친 값을 설정
 	public JoinDTO() { this.birth = this.birthYear+this.birthMonth+this.birthDay;
 	}
-	
+
     
 }
     	

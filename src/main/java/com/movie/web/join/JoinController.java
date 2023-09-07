@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -58,10 +59,6 @@ public class JoinController {
 	    return "redirect:/login";
 	}
 
-
-
-
-	
 	@ResponseBody
 	@GetMapping("/overlapCheck")
 	public int overlapCheck(@RequestParam String value, @RequestParam String valueType) {
@@ -71,6 +68,8 @@ public class JoinController {
 		System.out.println(count);
 		return count;
 	}
+	
+	
 	
 	
 	}

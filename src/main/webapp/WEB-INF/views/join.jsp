@@ -98,6 +98,6 @@
 		</form>
 	</div>
 	<script type="text/javascript" src="/js/common/util.js"></script>
-	<script type="text/javascript" src="/js/join/join.js"></script>
+	<script type="text/javascript" src="/js/member/join.js"></script>
 </body>
 </html>
