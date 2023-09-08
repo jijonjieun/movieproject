@@ -46,11 +46,11 @@
 
 					<a href="https://kauth.kakao.com/oauth/authorize?client_id=1f8b9019426f31e5d342c3462072b385&redirect_uri=http://localhost/login/kakao-redirect&response_type=code"> <img src="/img/kakao_login_small.png"
 						alt="카카오 로그인" height="50">
-					</a> <a href="/login/naver"> <img
+					</a> <a href="${naverUrl}"> <img
 						src="/img/naver_login_small.png" alt="네이버 로그인" height="50">
 					</a>
-
 				</div>
+				${hi}
 			</div>
 		</form>
 		<div class="find">
