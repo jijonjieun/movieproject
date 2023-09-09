@@ -14,7 +14,7 @@ function register(){
 	
 	$.ajax({
 		type : 'POST',
-		url : '/login/naver',
+		url : '/login/naver/register',
 		data : registerData,
 		dataType : 'json',
 		success : function(data){

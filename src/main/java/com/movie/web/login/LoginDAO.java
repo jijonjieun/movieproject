@@ -13,7 +13,8 @@ public interface LoginDAO {
 
 	Map<String, Object> userNaverLoginPro(Map<String, Object> apiJson);
 
-	void setNaverConnection(Map<String, Object> apiJson);
+	Integer userNaverRegisterPro(Map<String, Object> paramMap);
+
 
 
 

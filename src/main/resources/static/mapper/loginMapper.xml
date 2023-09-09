@@ -8,19 +8,18 @@
 	</select>
 
 <select id="naverConnectionCheck" parameterType="Map" resultType="Map">
-SELECT m_id, m_nickname,m_birth FROM members WHERE m_email = #{email}
+SELECT m_id, m_name FROM members WHERE m_id = #{id} and m_name =#{name}
 </select>
 
 <select id="userNaverLoginPro" parameterType="Map" resultType="Map">
-SELECT m_id, m_name, m_nickname, m_birth FROM members WHERE m_id = #{id}</select>
+SELECT m_name, m_nickname, m_birth FROM members WHERE m_id = #{id}</select>
 
 <insert id="setNaverConnection" parameterType="Map">
 INSERT INTO members(m_id, m_name, m_gender, m_birth, m_type)
 VALUES (#{id},#{name},#{gender},#{birthyear},'naver')
 </insert>
 
-
-
-
-
+<insert id="userNaverRegisterPro" parameterType="Map">
+INSERT INTO MEMBERS (m_id, m_name, m_email, m_nickname, m_gender, m_birth, m_type) VALUES (#{id},#{name},#{email},#{nickname},#{gender},#{birthyear},'naver')
+</insert>
 </mapper>

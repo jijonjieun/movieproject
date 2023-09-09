@@ -18,13 +18,12 @@ public class LoginService {
 		return loginDAO.naverConnectionCheck(apiJson);
 	}
 
-
 	public Map<String, Object> userNaverLoginPro(Map<String, Object> apiJson) {
 		return loginDAO.userNaverLoginPro(apiJson);
 	}
 
-	public void setNaverConnection(Map<String, Object> apiJson) {
-		
+	public Integer userNaverRegisterPro(Map<String, Object> paramMap) {
+		return loginDAO.userNaverRegisterPro(paramMap);
 	}
 
 
