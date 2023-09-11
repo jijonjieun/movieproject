@@ -3,8 +3,10 @@ package com.movie.web.login;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 @Mapper
+@Repository
 public interface LoginDAO {
 
 	Map<String, Object> login(Map<String, Object> map);
@@ -15,7 +17,11 @@ public interface LoginDAO {
 
 	Integer userNaverRegisterPro(Map<String, Object> paramMap);
 
+	Map<String, Object> findId(String findid);
 
+	Map<String, Object> findPw(Map<String, Object> map);
+
+	int temporaryPw(Map<String, Object> result);
 
 
 }

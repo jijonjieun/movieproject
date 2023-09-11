@@ -20,69 +20,58 @@ ul {
 	margin: 50px auto;
 }
 
-
 .signin_wrap {
-	position: static; margin : 0 auto;
+	position: static;
+	margin: 0 auto;
 	border: 1px solid #C6C6C6;
 	width: 500px;
 	border-radius: 5px;
 	margin-bottom: 20px;
-	margin: 0 auto;
 }
 
-.form_signin {
-	width: 100%;
-	max-width: 450px;
-	padding: 15px;
+.input-area{
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 30px; 
 }
 
-.form_signin .form-floating:focus-within {
-	z-index: 2;
-}
+
 
 .form-floating {
-	padding: 5px;
+	margin: 0 auto; /* 중앙 정렬을 위해 추가 */
+	margin-bottom: 20px;
 }
 
-.form_signin input[type="password"] {
-	margin-bottom: 10px;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
+button.btn-lg{
+    padding: 0.6em 1em;
+    border-radius: 0.25em;
+    border: gray;
+    font-weight: 400;
+    box-shadow: var(--shadow-1);
+    background-color: #209BF2;
+    color: white;
+    margin-bottom: 20px;
 }
 
-.form_signin label {
-	color: #888;
+.button-area {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
-
-.btn-area button {
-	margin-left: 70px;
-    margin-top: 0;
-    margin-bottom: 30px;
-	background-color: #DB4433;
-	border-color: #FFFFFF;
-	padding: 0.5rem 1rem;
-	font-size: 1.25rem;
-	line-height: 1.5;
-	border-radius: 0.3rem;
+ .error_message {
+	display: inline-block;
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: -.5px;
+	color: #ff003e;
+	vertical-align: middle;
+	margin-left: 85px;
 }
 
 .login_error_wrap {
 	clear: both;
-}
-
-.sns_wrap{
-	padding-left: 110px;
-}
-
-.sns_wrap a {
-	text-decoration: none;
-}
-
-.find {
-
-	padding-right: 2rem;
-
 }
 
 .find_wrap li {
@@ -90,6 +79,14 @@ ul {
 	display: inline-block;
 	font-size: 12px;
 	line-height: 20px;
+}
+
+.find {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+
 }
 
 .find_wrap li a {
@@ -111,64 +108,4 @@ ul {
 	height: 12px;
 	border-radius: 0.5px;
 	background-color: #dadada;
-}
-
-.btn-area .btn_text {
-	font-size: 19px;
-	font-weight: 700;
-	color: #FFFFFF;
-}
-
-.signin_wrap .error_message {
-	display: inline-block;
-	font-size: 12px;
-	line-height: 16px;
-	letter-spacing: -.5px;
-	color: #ff003e;
-	vertical-align: middle;
-}
-
-.form_signup {
-	width: 100%;
-	max-width: 450px;
-	padding: 15px;
-}
-
-.sns_wrap img {
-	height: 50px;
-}
-
-.signup_wrap label {
-	display: block;
-}
-
-.signup_wrap input::placeholder {
-	font-size: 14px;
-}
-
-.signup_wrap .error_wrap {
-	border: 1px solid #C6C6C6;
-	border-radius: 5px;
-	display: none;
-}
-
-.signup_wrap .error_wrap .warning {
-	color: #7B7AAF;
-}
-
-.signup_wrap .error_message {
-	font-size: 13px;
-	line-height: 16px;
-	letter-spacing: -.5px;
-}
-
-.signup_wrap .input_wrap input.error {
-	border-color: #FF3F3F;
-}
-
-.signup_wrap .input_wrap .error_message {
-	display: none;
-	color: #FF3F3F;
-	font-size: 11px;
-	margin-top: 5px;
 }

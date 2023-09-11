@@ -7,6 +7,21 @@
 		m_id=#{id} AND m_pw=#{pw}
 	</select>
 
+<select id="findId" parameterType="String" resultType="Map">
+SELECT m_id, m_name FROM members
+WHERE m_email = #{email}
+</select>
+
+<select id="findPw" parameterType="Map" resultType="Map">
+SELECT m_id, m_name, m_email, m_pw FROM members
+WHERE m_email =#{email} AND m_id=#{id}
+</select>
+
+<update id="temporaryPw" parameterType="Map">
+UPDATE members SET m_pw = 'aassddff' WHERE m_id = #{m_id}
+</update>
+
+
 <select id="naverConnectionCheck" parameterType="Map" resultType="Map">
 SELECT m_id, m_name FROM members WHERE m_id = #{id} and m_name =#{name}
 </select>
@@ -20,6 +35,10 @@ VALUES (#{id},#{name},#{gender},#{birthyear},'naver')
 </insert>
 
 <insert id="userNaverRegisterPro" parameterType="Map">
-INSERT INTO MEMBERS (m_id, m_name, m_email, m_nickname, m_gender, m_birth, m_type) VALUES (#{id},#{name},#{email},#{nickname},#{gender},#{birthyear},'naver')
+INSERT INTO members (m_id, m_name, m_email, m_nickname, m_type) VALUES (#{id},#{name},#{email},#{nickname},'naver')
 </insert>
+
+
+
 </mapper>
+

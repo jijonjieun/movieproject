@@ -23,7 +23,21 @@ public class LoginService {
 	}
 
 	public Integer userNaverRegisterPro(Map<String, Object> paramMap) {
+		System.out.println("연결확인"+paramMap);
 		return loginDAO.userNaverRegisterPro(paramMap);
+	}
+
+	public Map<String, Object> findId(String findid) {
+		return loginDAO.findId(findid);
+	}
+
+	public Map<String, Object> findPw(Map<String, Object> map) {
+		return loginDAO.findPw(map);
+	}
+
+	public int temporaryPw(Map<String, Object> result) {
+		return loginDAO.temporaryPw(result);
+		
 	}
 
 

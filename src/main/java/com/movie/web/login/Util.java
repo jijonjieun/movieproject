@@ -154,51 +154,48 @@ public class Util {
 	
 	
 	public void htmlMailSender(Map<String, Object> map) throws EmailException {
-		// System.out.println(map);
-		// 메일을 보내기 위해 필요한 정보 작성
-		// 보내는 사람 주소 찍기(나)
 		String emailAddr = "jendy812@outlook.com"; // 보내는사람
 		String passwd = "vmglgl36";// 메일의 암호
-		String name = "스프링에서 보냄"; // 보내는 사람 이름
+		String name = "DreamBox"; // 보내는 사람 이름
 		String hostname = "smtp.office365.com"; // smtp 주소
 		int port = 587; // 포트알기
 
-		// 메일보내기 작업하기
-		// SimpleEmail mail = new SimpleEmail();
-		HtmlEmail mail = new HtmlEmail(); // html메일 보내기로 변경
+		HtmlEmail mail = new HtmlEmail(); // html메일
 		mail.setCharset("UTF-8");
 		mail.setDebug(true); // 메일발송했을 때 오류 콘솔창에 뜨기하는 메소드
 		mail.setHostName(hostname); // 고정
 		mail.setAuthentication(emailAddr, passwd); // 고정
 		mail.setSmtpPort(port); // 고정
-		mail.setStartTLSEnabled(true); // 고정 ->이거모임
-		mail.setFrom(emailAddr, name); // 보내는사람 주소 이름
+		mail.setStartTLSEnabled(true);
+		mail.setFrom(emailAddr, name);
 
-		mail.addTo((String) map.get("to")); // 받는사람
-		mail.setSubject((String) map.get("title")); // 메일제목
-		// mail.setMsg((String) map.get("content"));//본문내용
-		//이미지 경로 잡아오기
-		String path = uploadPath();
-		 String img = "https://whale.naver.com/img//banner_beta_download_phone_1440.png";
-		String file2 = path + "/포인터 (3).docx";
-		
+		mail.addTo((String) map.get("m_email")); // 받는사람
+		mail.setSubject("DreamBox에서 임시비밀번호 발송해드립니다."); // 메일제목
+
+		 String img = "https://postfiles.pstatic.net/MjAyMzA5MTFfMTY4/MDAxNjk0NDE0NzE5OTIx.n1eIiytWVPW9eTNGQK8nK9wbCO67ZTg6De4-QYcA51Qg.5HbpygsD6q-1DshFVrvKu0tMUzmNZPB5EHO_6WBfDVUg.PNG.baboyahi/movielogo.png?type=w773";
+		 String href = "<a href=\"http://localhost/login\"></a>";
+		 
 		String html = "<html>"; // 코드가길어지니 여기서 작업해서 변수를 밑에 메소드에 넣음
-		html += "<h1>그림을 첨부합니다</h1>";
+		html += "<h1>DreamBox</h1>";
 		html += "<img alt=\"이미지\" src='"+img+"'>";
-		html += "<h2>임시 비밀번호를 보내드립니다.</h2>";
-		html += "<div> 임시암호 : 12345 </div>";
-		html += "<h3> 아래 링크를 클릭해서 암호를 변경해주세요.</h3>";
-		html += "<a href=\"http://nid.naver.com\">";
+		html += "<h2>임시비밀번호 입니다</h2>";
+		html += "<div> 임시비밀번호 : aassddff </div>";
+		html += "<h3> 본 사이트에서 다시 로그인해주세요</h3>";
+		html += href + "로그인페이지로 이동";
 		html += "</html>";
 		mail.setHtmlMsg(html);
-		//첨부파일도 보내주기
-		EmailAttachment file = new EmailAttachment();
-		file.setPath(file2);
-		mail.attach(file);
 		
-		
-		String result = mail.send(); // 메일보내기
-		System.out.println("메일보내기 :  " + result);
+		//메일 보내는데 시간이 걸려서 스레드처리
+		new Thread(new Runnable() {
+		    public void run() {
+		        try {
+		            String mailresult = mail.send(); // 메일 보내기
+		            System.out.println("메일보내기: " + mailresult);
+		        } catch (Exception e) {
+		            e.printStackTrace();
+		        }
+		    }
+		}).start();
 
 	}
 
