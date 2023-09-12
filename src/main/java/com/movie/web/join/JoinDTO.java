@@ -3,6 +3,7 @@ package com.movie.web.join;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -13,21 +14,26 @@ public class JoinDTO {
 	
 	
     @NotBlank(message = "아이디는 필수 항목입니다.")
+    @Pattern(regexp = "^(?=.*[a-z]).{5,}$",
+	   message = "아이디는 소문자를 포함하여 5글자 이상으로 입력해야합니다.")
     private String id;
 
-    @NotBlank(message = "비밀번호는 필수 항목입니다.")
-    @Pattern(regexp = "(?=.*[0-9])(?=.*[a-zA-Z])(?=\\S+$).{8,20}",
-            message = "비밀번호는 영문 대,소문자와 숫자가 적어도 1개 이상씩 포함된 8자 ~ 20자의 비밀번호여야 합니다.")
-    private String pw;
 
+    @NotBlank(message = "비밀번호는 필수 항목입니다.")
+    @Pattern(regexp = "(?=.*[0-9])(?=.*[a-zA-Z])(?=\\S+$).{6,20}",
+            message = "비밀번호는 영문 대,소문자와 숫자가 적어도 1개 이상씩 포함된 6자 ~ 20자의 비밀번호여야 합니다.")
+    private String pw;
+    
+    
     @NotBlank(message = "이름은 필수 항목입니다.")
     private String name;
 
     @NotBlank(message = "이메일은 필수 항목입니다.")
     @Email(message = "이메일 형식이 아닙니다.")
     private String email;
-
+    
     @NotBlank(message = "닉네임은 필수 항목입니다.")
+    @Size(max = 10, message = "닉네임은 10글자 이내로 입력해주세요.")
     private String nickName;
     
     @NotBlank(message = "성별은 필수 항목입니다.")

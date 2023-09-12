@@ -18,7 +18,7 @@ WHERE m_email =#{email} AND m_id=#{id}
 </select>
 
 <update id="temporaryPw" parameterType="Map">
-UPDATE members SET m_pw = 'aassddff' WHERE m_id = #{m_id}
+UPDATE members SET m_pw ='aassddff' WHERE m_id = #{m_id}
 </update>
 
 

@@ -13,20 +13,20 @@
 <body>
 
 	<div class="login_box">
-		<a href="/"> <img class="logo" src="/img/movielogin.png"
-			alt="logo" height="100">
+		<a href="/"> <img class="logo" src="/img/movielogo.png" alt="logo"
+			height="100">
 		</a>
 		<form action="/join" method="post">
 			<b>아이디</b>
 			<div class="input_aera">
-				<input type="text" name="id" class="form-control id "
-					maxlength="20" placeholder="아이디는 5글자 이상이여야 합니다."> <span
+				<input type="text" name="id" class="form-control id " maxlength="20"
+					placeholder="아이디는 소문자를 포함한 5글자 이상으로 입력해야합니다."> <span
 					class="msg_box">${errorMsg.id}</span>
 			</div>
 			<b>비밀번호</b>
 			<div class="input_aera">
 				<input type="password" class="pw form-control" name="pw"
-					maxlength="20" placeholder="비밀번호는 영문 숫자 조합 5글자">
+					maxlength="20" placeholder="비밀번호는 영문 숫자 조합한 6글자 이상으로 입력해야합니다.">
 			</div>
 			<b>비밀번호 확인</b>
 			<div class="input_aera">
@@ -41,13 +41,13 @@
 			<b>이름</b>
 			<div class="input_aera">
 				<input type="text" class="name form-control" name="name"
-					maxlength="20" placeholder="사용하실 이름을 입력해 주세요"> <span
-					class="msg_box">${errorMsg.name}</span>
+					maxlength="20" placeholder="사용하실 이름을 입력해 주세요. 한글만 가능합니다.">
+				<span class="msg_box">${errorMsg.name}</span>
 			</div>
 			<b>닉네임</b>
 			<div class="input_aera">
 				<input type="text" class="nickName form-control" name="nickName"
-					maxlength="20" placeholder="사용하실 닉네임을 입력해 주세요"> <span
+					maxlength="20" placeholder="닉네임을 10글자 이내로 입력해주세요."> <span
 					class="msg_box">${errorMsg.nickName}</span>
 			</div>
 			<b>성별</b>
@@ -57,19 +57,21 @@
 					<label><input type="radio" name="gender" id="f" value="f">여자</label>
 				</div>
 			</div>
+			<br>
 			<!-- BIRTH -->
 			<b>생년월일</b>
 			<div class="birth form-control">
 				<!-- BIRTH_YY -->
 				<div id="bir_yy">
-					<span class="box"> <input type="text" id="yy" name="birthYear" class="sel"
-						maxlength="4" placeholder="년(4자)">
+					<span class="box"> <input type="text" id="yy"
+						name="birthYear" class="sel" maxlength="4" placeholder="년(4자)">
 					</span>
 				</div>
 
 				<!-- BIRTH_MM -->
 				<div id="bir_mm">
-					<span class="box"> <select id="mm" name="birthMonth" class="sel">
+					<span class="box"> <select id="mm" name="birthMonth"
+						class="sel">
 							<option>월</option>
 							<option value="01">1</option>
 							<option value="02">2</option>
@@ -89,12 +91,18 @@
 
 				<!-- BIRTH_DD -->
 				<div id="bir_dd">
-					<span class="box"> <input type="text" id="dd" name="birthDay" class="sel"
-						maxlength="2" placeholder="일">
+					<span class="box"> <input type="text" id="dd"
+						name="birthDay" class="sel" maxlength="2"
+						placeholder="일 (2자 ex:05)">
 					</span>
 				</div>
 			</div>
-			<input type="submit" value="회원가입" class="btn btn-danger login_btn">
+			<br>
+			<br>
+		
+				<button class="btn-lg col-3 back" onclick="window.open('/');">취소</button>
+				<button class="btn-lg col-3 login_btn">회원가입</button>
+		
 		</form>
 	</div>
 	<script type="text/javascript" src="/js/common/util.js"></script>

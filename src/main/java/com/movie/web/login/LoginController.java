@@ -126,7 +126,7 @@ public class LoginController {
 			util.htmlMailSender(result);
 			//이메일보내고 임시비밀번호로 변경
 			int success = loginService.temporaryPw(result);
-			System.out.println(success);
+			System.out.println("여기에 뭐오냐"+success);
 			json.put("m_name", result.get("m_name"));
 		return json.toString();
 	}

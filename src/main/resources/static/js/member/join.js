@@ -1,4 +1,4 @@
-$(".login_btn").css("background", "#ddd");
+$(".login_btn").css("background", "#F3F3F3");
 
 const isSubmit = (function(){
     let idCheck = false;
@@ -33,10 +33,10 @@ const isSubmit = (function(){
 
     const isSubmit = function(){
         if(idCheck && passwordCheck && emailCheck && nameCheck && nicknameCheck) {
-            $(".login_btn").css("background", "#1C0065");
+            $(".login_btn").css("background", "#209BF2");
             return true;
         } else {
-            $(".login_btn").css("background", "#ddd");
+            $(".login_btn").css("background", "#F3F3F3");
             return false;
         }
     }
@@ -58,16 +58,16 @@ function pwdCheck() {
     
     if(password1 && password2) {
         if(password1.includes(" ")  || password2.includes(" ")) {
-            msgBox.text("비밀번호를 확인해 주세요");
+            msgBox.text("비밀번호를 확인해 주세요").css("color", "red");
             isSubmit.setpasswordCheck(false);
             return;
         }
         
         if(password1 != password2) {
-            msgBox.text("비밀번호를 확인해 주세요");
+            msgBox.text("비밀번호를 확인해 주세요").css("color", "red");
             isSubmit.setpasswordCheck(false);
         } else {
-            msgBox.text("비밀번호가 일치합니다");
+            msgBox.text("비밀번호가 일치합니다").css("color", "#209BF2");
             isSubmit.setpasswordCheck(true);
         }
     }
@@ -78,13 +78,13 @@ $(".id").focusout(function(){
     const msgBox = $(this).siblings(".msg_box"); 
     
     if(!id) {
-        msgBox.text("아이디를 입력해주세요");
+        msgBox.text("아이디를 입력해주세요").css("color", "red");
         isSubmit.setidCheck(false);
         return;
     }
     
     if(!idCheck(id)) {
-        msgBox.text("사용할수 없는 아이디입니다");
+        msgBox.text("사용할수 없는 아이디입니다").css("color", "red");
         isSubmit.setidCheck(false);
         return;
     }
@@ -95,10 +95,10 @@ $(".id").focusout(function(){
     };
     
     if(overlapCheck(data)) {
-        msgBox.text("사용 가능합니다");
+        msgBox.text("사용 가능합니다").css("color", "#209BF2");
         isSubmit.setidCheck(true);
     } else {
-        msgBox.text("이미 사용중인 아이디입니다");
+        msgBox.text("이미 사용중인 아이디입니다").css("color", "red");
         isSubmit.setidCheck(false);
     }
 });
@@ -140,18 +140,19 @@ $(".email").focusout(function() {
     const msgBox = $(this).siblings(".msg_box"); 
 
     if (!email) {
-        msgBox.text("이메일을 입력해 주세요");
+        msgBox.text("이메일을 입력해 주세요").css("color", "red");
         isSubmit.setemailCheck(false);
         return;
     }
 
     if(!emailCheck(email)) {
-        msgBox.text("사용 불가능합니다");
+        msgBox.text("사용 불가능합니다").css("color", "red");
         isSubmit.setemailCheck(false);
     } else {
-        msgBox.text("이메일은 아이디/비밀번호 찾기에 이용됩니다.");
+        msgBox.text("이메일은 아이디/비밀번호 찾기에 이용됩니다.").css("color", "#209BF2");
         isSubmit.setemailCheck(true);
     }
+
 });
 
 $(".name").focusout(function() {
@@ -159,13 +160,13 @@ $(".name").focusout(function() {
     const msgBox = $(this).siblings(".msg_box"); 
 
     if (!name) {
-        msgBox.text("이름을 입력해 주세요");
+        msgBox.text("이름을 입력해 주세요").css("color", "red");
         isSubmit.setnameCheck(false);
         return;
     }
 
     if(!nameCheck(name)) {
-        msgBox.text("사용 불가능합니다");
+        msgBox.text("사용 불가능합니다").css("color", "red");
         isSubmit.setnameCheck(false);
     } else {
         msgBox.text("");
@@ -180,13 +181,20 @@ $(".nickName").focusout(function() {
     const msgBox = $(this).siblings(".msg_box"); 
 
     if (!nickname) {
-        msgBox.text("닉네임을 입력 해주세요");
+        msgBox.text("닉네임을 입력 해주세요").css("color", "red");
+        isSubmit.setnicknameCheck(false);
+        return;
+    }
+
+    const regex = /^.{1,10}$/; // 길이가 1에서 10 사이여야 함
+    if (!regex.test(nickname)) {
+        msgBox.text("닉네임은 10글자 이내여야 합니다.").css("color", "red");
         isSubmit.setnicknameCheck(false);
         return;
     }
 
     if (!nicknameCheck(nickname)) {
-        msgBox.text("닉네임은 한글, 영어, 숫자만 4 ~ 10자리로 입력 가능합니다.");
+        msgBox.text("닉네임은 10글자 이내로 가능합니다.").css("color", "red");
         isSubmit.setnicknameCheck(false);
         return;
     }
@@ -197,10 +205,10 @@ $(".nickName").focusout(function() {
     };
     
     if(!overlapCheck(data)){
-        msgBox.text("이미 사용중인 닉네임입니다");
+        msgBox.text("이미 사용중인 닉네임입니다").css("color", "red");
         isSubmit.setnicknameCheck(false);
     } else {
-        msgBox.text("사용 가능합니다");
+        msgBox.text("사용 가능합니다").css("color", "#209BF2");
         isSubmit.setnicknameCheck(true);
     }
 });
