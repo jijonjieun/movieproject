@@ -106,11 +106,14 @@ public class LoginController {
 		//System.out.println(result.get("m_type"));
 		json.put("m_name", result.get("m_name"));
 		json.put("m_id", result.get("m_id"));
-		if(result.get("m_type").equals("naver")) {
+		String m_type = (String)result.get("m_type");
+		if(m_type != null && result.get("m_type").equals("naver")) {
 			System.out.println("타입가져오냐"+result.get("m_type"));
 			json.put("naver", "네이버 연동 회원입니다.");
-		}
+			return json.toString();
+		} else {
 		return json.toString();
+		}
 	}
 	
 	

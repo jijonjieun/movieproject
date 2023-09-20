@@ -173,7 +173,7 @@ public class Util {
 		mail.setSubject("DreamBox에서 임시비밀번호 발송해드립니다."); // 메일제목
 
 		 String img = "https://postfiles.pstatic.net/MjAyMzA5MTFfMTY4/MDAxNjk0NDE0NzE5OTIx.n1eIiytWVPW9eTNGQK8nK9wbCO67ZTg6De4-QYcA51Qg.5HbpygsD6q-1DshFVrvKu0tMUzmNZPB5EHO_6WBfDVUg.PNG.baboyahi/movielogo.png?type=w773";
-		 String href = "<a href=\"http://localhost/login\"></a>";
+		 String href = "<a href=\"http://localhost/login\">로그인페이지로 이동</a>";
 		 
 		String html = "<html>"; // 코드가길어지니 여기서 작업해서 변수를 밑에 메소드에 넣음
 		html += "<h1>DreamBox</h1>";
@@ -181,7 +181,7 @@ public class Util {
 		html += "<h2>임시비밀번호 입니다</h2>";
 		html += "<div> 임시비밀번호 : aassddff </div>";
 		html += "<h3> 본 사이트에서 다시 로그인해주세요</h3>";
-		html += href + "로그인페이지로 이동";
+		html += href;
 		html += "</html>";
 		mail.setHtmlMsg(html);
 		
