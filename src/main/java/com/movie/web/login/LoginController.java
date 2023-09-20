@@ -22,6 +22,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 
+import ch.qos.logback.core.util.SystemInfo;
+
 @Controller
 public class LoginController {
 	@Autowired
@@ -48,11 +50,12 @@ public class LoginController {
 		Map<String, Object> result = loginService.login(map);
 		ModelAndView mv = new ModelAndView();
 
-		System.out.println(result);
+		System.out.println("리설치에 담긴것은"+result);
 
 		if (util.obj2Int(result.get("count")) == 1) {
 			// 세션올리기
 			session.setAttribute("id", map.get("id"));
+			session.setAttribute("m_no", result.get("m_no"));
 			session.setAttribute("name", result.get("m_name"));
 			session.setAttribute("nickName", result.get("m_nicname"));
 			session.setAttribute("status", result.get("m_status"));
@@ -97,9 +100,16 @@ public class LoginController {
 		JSONObject json = new JSONObject();
 		Map<String, Object> result = loginService.findId(findid);
 		//아이디와 이름가져옴
+		System.out.println("타입가져오냐"+result.get("m_type"));
+
 		System.out.println(result.get("m_id"));
+		//System.out.println(result.get("m_type"));
 		json.put("m_name", result.get("m_name"));
 		json.put("m_id", result.get("m_id"));
+		if(result.get("m_type").equals("naver")) {
+			System.out.println("타입가져오냐"+result.get("m_type"));
+			json.put("naver", "네이버 연동 회원입니다.");
+		}
 		return json.toString();
 	}
 	
@@ -151,6 +161,7 @@ public class LoginController {
 		Map<String, Object> apiJson = (Map<String, Object>) objectMapper.readValue(apiResult, Map.class).get("response");
 //맵으로 사용자 정보를 저장함
 		System.out.println("여기까지옵니다"+apiJson);
+		//여기까지옵니다{id=ZzIax5zVqA4-BWv_5bPGAtZ5ux7HZYrLQsxOz4IG5CM, nickname=두식, gender=F, name=최지은, birthday=06-11, birthyear=1995}
 		
 		Map<String, Object> naverConnectionCheck = loginService.naverConnectionCheck(apiJson);
 		System.out.println(naverConnectionCheck);
@@ -159,27 +170,30 @@ public class LoginController {
 
 			model.addAttribute("id",apiJson.get("id"));
 			model.addAttribute("name",apiJson.get("name"));
+			model.addAttribute("gender",apiJson.get("gender"));
 			System.out.println("여기까지도 오잖아요?");
 			return "naverdetail";
 		} else {
+			//아이디가 있는경우 자동로그인
 			Map<String, Object> loginCheck = loginService.userNaverLoginPro(apiJson);
-			System.out.println(session.getAttribute("name"));
+			session.setAttribute("userInfo", loginCheck);
+			System.out.println(session.getAttribute("m_no"));
+			System.out.println("로그인체크에뭐가있나요"+loginCheck);
+			return "redirect:/";
 		}
-			return "test";
 		}
-	
 	
 
 	@RequestMapping(value="userRegisterForm", method=RequestMethod.POST)
 	public String userNaverRegisterPro(@RequestParam Map<String,Object> paramMap,HttpSession session, Model model){
 		System.out.println("paramMap여기오는지:" + paramMap);
-		Map <String, Object> resultMap = new HashMap<String, Object>();
 		Integer registerCheck = loginService.userNaverRegisterPro(paramMap);
 		System.out.println(registerCheck);
 		if(registerCheck != null && registerCheck > 0) {
 			Map<String, Object> loginCheck = loginService.userNaverLoginPro(paramMap);
 			session.setAttribute("userInfo", loginCheck);
-			return "/";
+			System.out.println(session.getAttribute("m_no"));
+			return "redirect:/";
 		}
 		return "login";
 	}	

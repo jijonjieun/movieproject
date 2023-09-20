@@ -3,12 +3,12 @@
 <mapper namespace="com.movie.web.login.LoginDAO">
 
 	<select id="login" parameterType="Map" resultType="Map"> 
-		SELECT m_id, m_name, m_nickname, m_birth, count(*) as 'count' from members WHERE
+		SELECT m_no, m_id, m_name, m_nickname, m_birth, count(*) as 'count' from members WHERE
 		m_id=#{id} AND m_pw=#{pw}
 	</select>
 
 <select id="findId" parameterType="String" resultType="Map">
-SELECT m_id, m_name FROM members
+SELECT m_id, m_name, m_type FROM members
 WHERE m_email = #{email}
 </select>
 
@@ -27,7 +27,7 @@ SELECT m_id, m_name FROM members WHERE m_id = #{id} and m_name =#{name}
 </select>
 
 <select id="userNaverLoginPro" parameterType="Map" resultType="Map">
-SELECT m_name, m_nickname, m_birth FROM members WHERE m_id = #{id}</select>
+SELECT m_no, m_name, m_nickname, m_birth FROM members WHERE m_id = #{id}</select>
 
 <insert id="setNaverConnection" parameterType="Map">
 INSERT INTO members(m_id, m_name, m_gender, m_birth, m_type)
@@ -35,7 +35,7 @@ VALUES (#{id},#{name},#{gender},#{birthyear},'naver')
 </insert>
 
 <insert id="userNaverRegisterPro" parameterType="Map">
-INSERT INTO members (m_id, m_name, m_email, m_nickname, m_type) VALUES (#{id},#{name},#{email},#{nickname},'naver')
+INSERT INTO members (m_id, m_name, m_email, m_nickname, m_type) VALUES (#{id},#{name},#{email},#{nickName},'naver')
 </insert>
 
 

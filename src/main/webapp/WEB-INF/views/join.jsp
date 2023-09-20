@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CGV::join</title>
+<title>회원가입</title>
 <link rel="stylesheet" href="./css/join.css">
 <script src="./js/jquery-3.7.0.min.js"></script>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
