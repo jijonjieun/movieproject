@@ -70,19 +70,16 @@ public class LoginController {
 
 	}
 
+	//로그아웃
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
-		if (session.getAttribute("id") != null) {
-			session.removeAttribute("id");
 
-		}
-		if (session.getAttribute("name") != null) {
-			session.removeAttribute("name");
-		}
-		// 다른 방법
+		session.setMaxInactiveInterval(0); 
 		session.invalidate();
-		return "redirect:/";
+
+		return "redirect:/mhome";
 	}
+	
 	
 	
 	//아이디찾기

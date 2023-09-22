@@ -3,7 +3,7 @@
 <mapper namespace="com.movie.web.login.LoginDAO">
 
 	<select id="login" parameterType="Map" resultType="Map"> 
-		SELECT m_no, m_id, m_name, m_nickname, m_birth, count(*) as 'count' from members WHERE
+		SELECT m_no, m_id, m_name, m_nickname, m_birth, m_status, count(*) as 'count' from members WHERE
 		m_id=#{id} AND m_pw=#{pw}
 	</select>
 

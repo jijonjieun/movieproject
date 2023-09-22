@@ -6,7 +6,7 @@
 <head>
 <link rel="stylesheet" href="./css/login.css">
 <meta charset="UTF-8">
-<title>CGV::login</title>
+<title>Dream Box :: login</title>
 <script src="./js/jquery-3.7.0.min.js"></script>
 <%@ include file="/WEB-INF/views/common/header.jsp"%>
 </head>

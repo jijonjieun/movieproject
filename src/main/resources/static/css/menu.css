@@ -7,57 +7,45 @@
 }
 
 @font-face {
-    font-family: 'LINESeedKR-Bd';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
-    font-weight: 700;
+    font-family: 'LINESeedKR-Rg';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Rg.woff2') format('woff2');
     font-style: normal;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body, nav {
 	margin: 0;
 	padding: 0;
-	 font-family: 'LINESeedKR-Bd';
-}
-nav {
-	height: 150px;
-	
 }
 
-li {
-	list-style: none;
-	float: left;
-	text-align: center;
+nav {
+	height: 150px; /* 150으로변경 */
+	font-family: 'LINESeedKR-Rg';
 }
 
 .menu {
-	font-family: 'Noto Sans KR', sans-serif;
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 150px;
 	position: fixed;
+	z-index: 50;
 	overflow: hidden;
 	box-sizing: border-box;
 	background-color: white;
 }
 
-.menu hr {
-	border: 0.01em solid #A6A6A6;
-}
-
 .menu_header {
 	width: 100%;
 	height: 80px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #A6A6A6;
 }
 
 .header_logo {
-	width: 50%;
+	width: 40%;
 	float: left;
 	display: grid;
 	padding-top: 18px;
-	padding-left: 70px;
+	padding-left: 200px;
 	box-sizing: border-box;
 	height: 100%;
 }
@@ -66,79 +54,172 @@ li {
 	height: 60px;
 }
 
-.header_warp {
-	width: 50%;
+.header_wrap {
+	width: 60%;
 	height: 100%;
 	float: right;
+	padding-right: 200px;
+	box-sizing: border-box;
 }
 
 .aside {
-	padding-left: 150px;
-	padding-right: 30px;
 	padding-top: 5px;
 	box-sizing: border-box;
 }
 
 .aside_list {
 	display: flex;
-	justify-content: center; 
+	justify-content: flex-end; 
 	align-items: center;
 	height: 100%;
 }
 
-.aside li {
+.aside_list li {
+	list-style: none;
+	float: left;
+	text-align: center;
 	width: 120px;
 	height: 60px;
 	display: grid;
 }
 
 .aside_list .icon {
-	font-size: 30px;
-	font-weight: bolder;
+	font-size: 28px;
 }
 
 .aside_list .text {
-	font-size: 13px;
-}
-
-.menu_nav {
-	height: 100%;
+	font-size: 14px;
 }
 
 .menu_map {
-	width: 50%;
-	height: 50px;
-	line-height: 60px;
+	width: 35%;
 	float: left;
-	padding-left: 70px;
+	padding-left: 200px;
 	box-sizing: border-box;
 }
 
 .menu_map .icon {
+	height: 45px;
+	line-height: 45px !important;
 	font-size: 25px;
 	font-weight: bolder;
+	box-sizing: border-box;
 }
 
-.menu_warp {
+
+
+/* 사이드메뉴시작 */
+.menu_side {
+	width: 65%;
+	margin: 0;
+	float: right;
+	padding-right: 200px;
+	box-sizing: border-box;
+	height: 45px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	text-align: center;
+}
+
+.menu_wrap {
+	display: flex;
+	justify-content: right;
+	margin: 0;
+}
+
+.menu_wrap .list {
+	position: relative;
+	font-size: 13pt;
+	list-style: none;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.menu_wrap .text {
+	display: inline-block;
+	font-weight: bold;
+	width: 120px;
+	height: 45px;
+	line-height: 45px;
+}
+
+.menu_wrap .text:hover {
+	border-bottom: 3px solid #F27720;
+	color: #F27720;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+.list .sub_menu {
+	z-index: 55;
+	position: absolute;
+	overflow: hidden;
+	top: 45px;
+	text-align: center;
+	font-size: 12pt;
+	color: white;
+	background-color: #F27720;
+	padding: 5px;
+	width: 200%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	left: -50%;
+	display: none;
+	height: 80px;
+}
+
+.menu_wrap > li > ul > li {
+	display: inline-block;
+	width: 120px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.menu_wrap > li > ul > li:hover {
+	cursor: pointer;
+	text-decoration: underline;
+	box-sizing: border-box;
+}
+
+
+/* 통합검색 */
+#m_mallbox {
+	width: 100%;
+	height: 400px;
+	background-color: yellow;
+	padding:  0 200px;
+	box-sizing: border-box;
+}
+
+.m_mrate {
 	width: 50%;
+	height: 100%;
 	float: left;
-	padding-right: 30px;
-	box-sizing: border-box;
+	background-color: green;
 }
 
-.menu_warp ul {
-	padding-left: 120px;
-	padding-right: 30px;
-	box-sizing: border-box;
-}
-.menu_warp li {
-	width: 80px;
-	height: 60px;
-	font-size: 14pt;
-	font-weight: 600;
+.m_msearch {
+	width: 50%;
+	height: 100%;
+	float: left;
+	background-color: #209BF2;
 }
 
 
+
+
+
+/* .menu_submenu {
+	position: relative;
+	top: 45px;
+	width: 100%;
+	height: 40px;
+	background-color: #F27720;
+	z-index: 47;
+	 
+}*/
 
 /* .menu_left {
     font-family: 'GangwonState';

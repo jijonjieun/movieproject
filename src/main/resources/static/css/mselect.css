@@ -1,0 +1,573 @@
+@charset "UTF-8";
+
+
+
+
+/* 영화 선택 */
+.mselect {
+	font-family: 'Noto Sans KR', sans-serif;
+	width: 1200px;
+	margin: 0 auto;
+	height: 700px;
+}
+
+.select_movie {
+	width: 25%;
+	float: left;
+	border-left: 0.01em solid #A6A6A6;
+	border-right: 0.01em solid #A6A6A6;
+	border-bottom: 0.01em solid #A6A6A6;
+	padding-bottom: 20px;
+}
+
+.select_title {
+	border-top: 0.13em solid #1D1C1C;
+	border-bottom: 0.01em solid #A6A6A6;
+	height: 35px;
+	line-height: 35px;
+	font-size: 13pt;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.movie_all {
+	height: 30px;
+	line-height: 30px;
+	font-size: 12pt;
+	font-weight: 500;
+	margin: 0 auto;
+	text-align: center;
+	border-top: 0.08em solid #1D1C1C;
+	border-left: 0.08em solid #1D1C1C;
+	border-right: 0.08em solid #1D1C1C;
+	margin-bottom: 10px;
+}
+
+.movie_list {
+	margin: 0 auto;
+	height: 350px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+	overflow: scroll;
+}
+
+.movie_list_box {
+	height: 30px;
+	margin: 3px;
+}
+
+.movie_list_box:hover {
+	background-color: #1D1C1C;
+	color: white;
+}
+
+.movie_list_img {
+	width: 13%;
+	float: left;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.movie_list_img img {
+	width: 20px;
+}
+
+.movie_list_all {
+	line-height: 30px;
+}
+
+.movie_selected {
+	height: 150px;
+}
+
+.selected_poster {
+	width: 40%;
+	height: 100%;
+	float: left;
+	display: flex;
+	align-items: center;
+}
+
+.selected_poster img {
+	max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+}
+
+.selected_info {
+	width: 60%;
+	height: 100%;
+	float: left;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 0.05em solid #A6A6A6;
+}
+
+.selected_title {
+	font-size: 13pt;
+	font-weight: 700;
+	color: #209BF2;
+	margin-bottom: 8px;
+}
+
+.selected_movie {
+	font-size: 12pt;
+	font-weight: 600;
+}
+
+.selected_genre {
+	font-size: 10pt;
+	margin-bottom: 20px;
+}
+
+.selected_grade {
+	font-size: 10.5pt;
+	font-weight: 400;
+}
+
+/* 극장 선택 */
+.select_theater {
+	width: 30%;
+	float: left;
+	border-right: 0.01em solid #A6A6A6;
+	border-bottom: 0.01em solid #A6A6A6;
+	padding-bottom: 20px;
+}
+
+.select_content {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.theater_all {
+	width: 49%;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12pt;
+	font-weight: 500;
+	text-align: center;
+	border-top: 0.08em solid #1D1C1C;
+	border-left: 0.08em solid #1D1C1C;
+	border-right: 0.08em solid #1D1C1C;
+	margin-bottom: 10px;
+}
+
+.theater_special {
+	width: 49%;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12pt;
+	font-weight: 500;
+	text-align: center;
+	border-bottom: 0.08em solid #1D1C1C;
+}
+
+.theater_list {
+	clear: both;
+	float: left;
+	width: 50%;
+	height: 350px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+	font-size: 11.5pt;
+	font-weight: 500;
+	overflow: scroll;
+}
+
+.theater_special_list {
+	float: left;
+	width: 50%;
+	height: 350px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+	font-size: 11.5pt;
+	font-weight: 500;
+	overflow: scroll;
+}
+
+.theater_list_all, .special_list_all, .theater_list_city, .special_list_city {
+	height: 30px;
+	line-height: 30px;
+	padding-left: 5px;
+}
+
+.theater_list_all:hover, .special_list_all:hover {
+	background-color: #F3F3F3;
+	border: 0.08em solid #1D1C1C;
+}
+
+.theater_list_city:hover, .special_list_city:hover {
+	background-color: #1D1C1C;
+	color: white;
+}
+
+.theater_selected {
+	clear: both;
+	width: 100%;
+	height: 150px;
+	border: 0.05em solid #A6A6A6;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.selected_area, .selected_kind {
+	margin: 15px 0;
+	font-size: 12pt;
+	font-weight: 600;
+	float: left;
+	white-space: pre;
+}
+
+.selected_city {
+	clear: both;
+	margin-top: 10px;
+	font-size: 12pt;
+	font-weight: 600;
+}
+
+/* 날짜 선택 */
+.select_calendar {
+	width: 10%;
+	height: 625px;
+	float: left;
+	border-right: 0.05em solid #A6A6A6;
+	border-bottom: 0.05em solid #A6A6A6;
+}
+
+.select_date {
+	width: 100%;
+	padding: 5px;
+	box-sizing: border-box;
+	height: 590px;
+	margin: 0 auto;
+	text-align: center;
+	overflow: scroll;
+}
+
+.year{
+	font-family: 'GangwonState';
+	color: #77C2F7;
+	font-size: 12pt;
+	font-weight: bold;
+	margin-top: 7px;
+}
+
+.month {
+	font-family: 'GangwonState';
+	color: #77C2F7;
+	font-size: 17pt;
+	font-weight: bolder;
+	margin-bottom: 5px;
+}
+
+.select_date button {
+	color: #3D3A35;
+	width: 90%;
+	height: 35px;
+	line-height: 35px;
+	font-size: 12pt;
+	font-weight: 600;
+	border: none;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.select_date button:hover {
+	background-color: #1D1C1C;
+	color: white;
+}
+
+.week {
+	width: 20%;
+	float: left;
+	font-size: 10pt;
+}
+
+
+.day {
+	width: 50%;
+	float: left;
+	font-size: 13pt;
+}
+
+
+
+/* 완료 */
+
+
+
+/* 시간 선택 */
+
+.select_time {
+	width: 34%;
+	height: 600px;
+	background-color: pink;
+	float: left;
+	border-right: 0.01em solid #A6A6A6;
+	border-bottom: 0.01em solid #A6A6A6;
+	padding-bottom: 20px;
+}
+
+.selected_movie_title {
+	height: 40px;
+	display: flex;
+	align-items: center;
+	background-color: gray;
+	font-size: 14pt;
+	font-weight: 700;
+	white-space: pre;
+	margin-bottom: 10px;
+}
+
+.selected_movie_title img {
+	width: 30px;
+}
+
+.timetable {
+	height: 350px;
+	background-color: green;
+	overflow: scroll;
+}
+
+.theater_kind {
+	height: 40px;
+	background-color: yellow;
+	padding: 5px;
+}
+
+.selected_sch {
+	width: 30%;
+	height: 10px;
+	border: 0.01em solid #A6A6A6;
+	border-radius: 5px;
+	float: left;
+	background-color: gray;
+}
+
+
+
+
+
+.timetable_selected {
+	clear: both;
+	width: 100%;
+	height: 150px;
+	border: 0.05em solid #A6A6A6;
+	padding: 10px;
+	box-sizing: border-box;
+	background-color: gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 모달용 */
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px
+}
+
+.close {
+	float: right;
+	font-size: 21px;
+	font-weight: 700;
+	line-height: 1;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+	filter: alpha(opacity = 20);
+	opacity: .2
+}
+
+.close:focus, .close:hover {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+	filter: alpha(opacity = 50);
+	opacity: .5
+}
+
+button.close {
+	-webkit-appearance: none;
+	padding: 0;
+	cursor: pointer;
+	background: 0 0;
+	border: 0
+}
+
+.modal-open {
+	overflow: hidden
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1040;
+	display: none;
+	overflow: hidden;
+	-webkit-overflow-scrolling: touch;
+	outline: 0
+}
+
+.modal.fade .modal-dialog {
+	-webkit-transition: -webkit-transform .3s ease-out;
+	-o-transition: -o-transform .3s ease-out;
+	transition: transform .3s ease-out;
+	-webkit-transform: translate(0, -25%);
+	-ms-transform: translate(0, -25%);
+	-o-transform: translate(0, -25%);
+	transform: translate(0, -25%)
+}
+
+.modal.in .modal-dialog {
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	transform: translate(0, 0)
+}
+
+.modal-open .modal {
+	overflow-x: hidden;
+	overflow-y: auto
+}
+
+.modal-dialog {
+	position: relative;
+	width: auto;
+	margin: 10px
+}
+
+.modal-content {
+	position: relative;
+	background-color: #fff;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: 1px solid #999;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: 6px;
+	outline: 0;
+	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+	box-shadow: 0 3px 9px rgba(0, 0, 0, .5)
+}
+
+.modal-backdrop {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	background-color: #000
+}
+
+.modal-backdrop.fade {
+	filter: alpha(opacity = 0);
+	opacity: 0
+}
+
+.modal-backdrop.in {
+	filter: alpha(opacity = 50);
+	opacity: .5
+}
+
+.modal-header {
+	min-height: 16.43px;
+	padding: 15px;
+	border-bottom: 1px solid #e5e5e5
+}
+
+.modal-header .close {
+	margin-top: -2px
+}
+
+.modal-title {
+	margin: 0;
+	line-height: 1.42857143
+}
+
+.modal-body {
+	position: relative;
+	padding: 15px
+}
+
+.modal-footer {
+	padding: 15px;
+	text-align: right;
+	border-top: 1px solid #e5e5e5
+}
+
+.modal-footer .btn+.btn {
+	margin-bottom: 0;
+	margin-left: 5px
+}
+
+.modal-footer .btn-group .btn+.btn {
+	margin-left: -1px
+}
+
+.modal-footer .btn-block+.btn-block {
+	margin-left: 0
+}
+
+.modal-scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll
+}
+
+@media ( min-width :768px) {
+	.modal-dialog {
+		width: 600px;
+		margin: 30px auto
+	}
+	.modal-content {
+		-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+		box-shadow: 0 5px 15px rgba(0, 0, 0, .5)
+	}
+	.modal-sm {
+		width: 300px
+	}
+}
+
+@media ( min-width :992px) {
+	.modal-lg {
+		width: 900px
+	}
+}
+
