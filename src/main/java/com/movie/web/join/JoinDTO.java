@@ -42,11 +42,16 @@ public class JoinDTO {
     
     // 생년월일 관련 필드 추가
     @NotBlank(message = "년도는 필수 항목입니다.")
+    @Pattern(regexp = "^(19[0-9][0-9]|200[0-7])$",
+            message = "4자리 숫자를 입력해주세요. 가입은 1900년~2007년생까지 할 수 있습니다.")
     private String birthYear;
 
     @NotBlank(message = "월은 필수 항목입니다.")
     private String birthMonth;
-
+    
+    
+    @Pattern(regexp = "^(0[1-9]|[12][0-9]|3[01])$",
+            message = "유효한 생년월일을 입력해주세요.")
     @NotBlank(message = "일은 필수 항목입니다.")
     private String birthDay;
     

@@ -7,22 +7,22 @@
  */
 body {
 	font-size: 14px;
-	background-color: #f5f6f7;
 	line-height: 1.5em;
 	color: #222;
 	margin: 20px;
 	padding-bottom: 10px;
+	
 }
 
 .login_box {
 	position: relative;
-	top: 150px;
+	top: 100px;
 	width: 700px;
 	border: 1px solid #C6C6C6;
 	border-radius: 5px;
 	margin: auto; /*중앙 정렬*/
 	padding: 0 20px;
-	margin-bottom: 20px;
+	margin-bottom: 100px;
 }
 
 .login_box .logo {
@@ -83,6 +83,10 @@ body {
 	color: red;
 }
 
+.msg_box1 {
+	color: red;
+}
+
 .login_btn {
 	padding: 0.6em 1em;
 	border-radius: 0.25em;
@@ -102,4 +106,9 @@ body {
 	color: white;
 	margin-bottom: 50px;
 	margin-left: 150px;
+}
+
+
+.enter {
+	height: 200px;
 }

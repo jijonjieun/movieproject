@@ -120,7 +120,7 @@ $(function() {
 			<td id="content" class="nickname">${myInfo.m_nickname}<input
 				type="hidden" name="before" id="before" value="${myInfo.m_nickname}">
 				<input type="hidden" name="user" id="user" value="${myInfo.m_no}">
-				<button class="nbtn" type="button">닉네임 제제</button>
+				<button class="nbtn" type="button">닉네임 제재</button>
 				<div class="nick">
 					<span id="nick"></span>
 				</div>

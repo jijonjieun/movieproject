@@ -13,7 +13,7 @@
 	$(function(){
 		$(".menu_wrap > li").mouseover(function(){
 			$(this).find(".sub_menu").show();
-			$(".menu_nav").css("height", "100px");
+		/* 	$(".menu_nav").css("height", "100px"); */
 		});
 		
 		$(".menu_wrap > li").mouseout(function(){
@@ -74,7 +74,7 @@
 							</c:when>
 							<c:otherwise>
 								<c:if test="${sessionScope.status eq 0 }">
-									<li onclick="link('admin/admin')">
+									<li onclick="link('admin')">
 										<span class="xi-cog icon"></span>
 										<span class="text">관리자</span>
 									</li>
@@ -154,40 +154,6 @@
 	</div>
 
 </nav>
-<div id="m_mallbox">
-	<div class="m_mrate">
-		<h3>예매 순위</h3>
-		<div class="m_mposter">
-			<img src="">
-		</div>
-		<div class="m_mlist">
-			<ul class="m_mall">
-				<li class="m_mlist1"></li>
-				<li class="m_mlist2"></li>
-				<li class="m_mlist3"></li>
-				<li class="m_mlist4"></li>
-				<li class="m_mlist5"></li>
-			</ul>
-		
-		</div>
-	
-	</div>
-	
-	<div class="m_msearch">
-		<div class="mm_1">
-			<img src="./img/logo_white.png">
-		</div>
-		<div class="mm_2">
-			<form >
-				<input placeholder="영화를 검색하세요"><span class="xi-search"></span>
-			</form>
-		</div>
-		<div class="mm_3">
-			<img src="./img/logo_slogan.png">
-		</div>
-	
-	</div>
-</div>
 
 
 <script>

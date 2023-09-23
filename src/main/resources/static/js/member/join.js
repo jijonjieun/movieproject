@@ -6,6 +6,7 @@ const isSubmit = (function(){
     let emailCheck = false;
     let nameCheck = false;
     let nicknameCheck = false;
+    let yyCheck = false;
 
 
     const setidCheck = function(set){
@@ -31,8 +32,14 @@ const isSubmit = (function(){
         isSubmit();
     }
 
+
+    const setyyCheck = function(set){
+        yyCheck = set ? true : false;
+        isSubmit();
+    }
+
     const isSubmit = function(){
-        if(idCheck && passwordCheck && emailCheck && nameCheck && nicknameCheck) {
+        if(idCheck && passwordCheck && emailCheck && nameCheck && nicknameCheck && yyCheck) {
             $(".login_btn").css("background", "#209BF2");
             return true;
         } else {
@@ -47,6 +54,7 @@ const isSubmit = (function(){
         setemailCheck : setemailCheck,
         setnameCheck : setnameCheck,
         setnicknameCheck : setnicknameCheck,
+        setyyCheck : setyyCheck,
         isSubmit : isSubmit
     }
 })();
@@ -148,10 +156,24 @@ $(".email").focusout(function() {
     if(!emailCheck(email)) {
         msgBox.text("사용 불가능합니다").css("color", "red");
         isSubmit.setemailCheck(false);
+		return;
+    }
+
+    let data = {
+        value: email,
+        valueType : "m_email" 
+    };
+
+
+ if(!overlapCheck(data)){
+        msgBox.text("이미 사용중인 이메일 입니다").css("color", "red");
+        isSubmit.setemailCheck(false);
     } else {
-        msgBox.text("이메일은 아이디/비밀번호 찾기에 이용됩니다.").css("color", "#209BF2");
+        msgBox.text("이메일은 계정찾기와 예매내역확인에 이용됩니다.").css("color", "#209BF2");
         isSubmit.setemailCheck(true);
     }
+
+
 
 });
 
@@ -194,7 +216,7 @@ $(".nickName").focusout(function() {
     }
 
     if (!nicknameCheck(nickname)) {
-        msgBox.text("닉네임은 10글자 이내로 가능합니다.").css("color", "red");
+        msgBox.text("올바른 닉네임을 입력해주세요.").css("color", "red");
         isSubmit.setnicknameCheck(false);
         return;
     }
@@ -212,3 +234,24 @@ $(".nickName").focusout(function() {
         isSubmit.setnicknameCheck(true);
     }
 });
+
+
+
+$("#yy").focusout(function() {
+    const yy = $("#yy").val();
+    const msgBox = $(this).parent().parent().siblings(".msg_box");
+
+    if (!yy) {
+        msgBox.text("생년월일을 입력해주세요.").css("color", "red");
+        isSubmit.setyyCheck(false);
+        return;
+    }
+
+    if(!yyCheck(yy)) {
+        msgBox.text("사용 불가능합니다").css("color", "red");
+        isSubmit.setyyCheck(false);
+    } else {
+        msgBox.text("");
+        isSubmit.setyyCheck(true);
+    }
+}); 

@@ -13,9 +13,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class JoinController {
@@ -29,7 +29,7 @@ public class JoinController {
 	}
 	
 	@PostMapping("/join")
-	public String join(@Valid JoinDTO joinDTO, BindingResult bindingResult, Model model) {
+	public String join(@Valid JoinDTO joinDTO, BindingResult bindingResult, Model model,RedirectAttributes redirectAttributes) {
 	    // 오류 처리를 위해 모델에 errorMsg를 추가
 	    Map<String, String> errorMsg = new HashMap<>();
 	    if(bindingResult.hasErrors()) {
@@ -46,7 +46,7 @@ public class JoinController {
 	            
 	            errorMsg.put(field, message);
 	        }
-	        
+	        	
 	        // 모델에 errorMsg를 추가
 	        model.addAttribute("errorMsg", errorMsg);
 	        
@@ -54,9 +54,10 @@ public class JoinController {
 	        return "/join";
 	    }
 	    joinService.join(joinDTO);
+	    redirectAttributes.addFlashAttribute("successMsg", "회원가입을 축하합니다! 가입 축하 기념 1000p가 지급되셨습니다.");
 
-	    // 오류가 발생하지 않은 경우 로그인 페이지로 리다이렉트
-	    return "redirect:/login";
+
+	    return "redirect:/join";
 	}
 
 	@ResponseBody

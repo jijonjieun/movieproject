@@ -53,6 +53,6 @@ margin-bottom: 40px;
 				</div>
 		</form>
 	</div>
-	<script type="text/javascript" src="./js/member/login.js"></script>
+	<script type="text/javascript" src="/js/member/login.js"></script>
 </body>
 </html>

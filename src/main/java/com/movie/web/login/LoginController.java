@@ -77,7 +77,7 @@ public class LoginController {
 		session.setMaxInactiveInterval(0); 
 		session.invalidate();
 
-		return "redirect:/mhome";
+		return "redirect:/";
 	}
 	
 	

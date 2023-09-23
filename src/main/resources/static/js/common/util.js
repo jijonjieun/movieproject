@@ -19,7 +19,7 @@ function emailCheck(email){
 }
 
 function nameCheck(name) {
-	const joinname = /^[A-Za-zㄱ-ㅎㅏ-ㅣ가-힣]{2,30}$/g;
+	const joinname = /^[가-힣]{2,5}$/g;
 	if (joinname.test(name)) {
 		return true;
 	} else {
@@ -30,14 +30,25 @@ function nameCheck(name) {
  
  
 function nicknameCheck(nickname) {
-	const joinNickname = /^[가-힣|a-z|A-Z|0-9|]+$/;
+	const joinNickname = /^[가-힣|a-z|A-Z|0-9|]+$/g;
 	if (joinNickname.test(nickname)) {
 		return true;
 	} else {
 		return false;
 	}
 }
+
+
+function yyCheck(yy) {
+	const joinyy = /^(19[0-9][0-9]|200[0-7])$/;
+	if (joinyy.test(yy)) {
+		return true;
+	} else {
+		return false;
+	}
+}
  
+  
  
  
 function lenthCheck(e, length) {

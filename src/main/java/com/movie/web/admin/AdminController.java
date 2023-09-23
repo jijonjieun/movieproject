@@ -44,13 +44,14 @@ public class AdminController {
 
 	//로그인
 	@PostMapping("/login")
-	public String adminLogin(@RequestParam Map<String, Object> map, HttpSession session) {
+	public ModelAndView adminLogin(@RequestParam Map<String, Object> map, HttpSession session) {
 		System.out.println(map);
 
 		Map<String, Object> result = adminService.adminLogin(map);
+		ModelAndView mv = new ModelAndView();
 
 		System.out.println("나한테오는거야?"+result);
-
+		
 		if (adminUtil.obj2Int(result.get("count")) == 1 && adminUtil.obj2Int(result.get("m_status")) == 0) {
 			// 세션올리기
 			System.out.println("여기옴?");
@@ -58,11 +59,13 @@ public class AdminController {
 			session.setAttribute("adminInfo", result);
 			System.out.println(session.getAttribute("adminInfo"));
 			// 메인으로 이동하기
-			return "redirect:/admin/member";
+			mv.setViewName("redirect:/admin/member");
 		} else {
-			return "redirect:/admin/login";
+			String error = "너..관리자 아니지....";
+			mv.addObject("error", error);
+			mv.addObject("redirect:/admin/login");
 		}
-
+		return mv;
 	}
 	
 	//로그아웃
@@ -72,7 +75,7 @@ public class AdminController {
 		session.setMaxInactiveInterval(0); 
 		session.invalidate();
 
-		return "redirect:/mhome";
+		return "redirect:/";
 	}
 	
 	

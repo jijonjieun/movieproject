@@ -5,13 +5,23 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
 <link rel="stylesheet" href="./css/join.css">
 <script src="./js/jquery-3.7.0.min.js"></script>
-<%@ include file="/WEB-INF/views/common/header.jsp"%>
 </head>
-<%@ include file="menu.jsp"%>
 <body>
+<%@ include file="menu.jsp"%>
+	<script>
+		var successMsg = "${successMsg}";
 
+		if (successMsg) {
+			alert(successMsg);
+			window.location.href = "/login"
+		}
+	</script>
+	<div class="article">
 	<div class="login_box">
 		<a href="/"> <img class="logo" src="/img/movielogo.png" alt="logo"
 			height="100">
@@ -96,14 +106,18 @@
 						placeholder="일 (2자 ex:05)">
 					</span>
 				</div>
+				<span class="msg_box">${errorMsg.birthYear}</span>
+				<span class="msg_box1">${errorMsg.birthMonth}</span>
+				<span class="msg_box1">${errorMsg.birthDay}</span>
 			</div>
-			<br>
-			<br>
-		
-				<button class="btn-lg col-3 back" onclick="window.open('/');">취소</button>
-				<button class="btn-lg col-3 login_btn">회원가입</button>
-		
+			<br> <br>
+
+			<button class="btn-lg col-3 back" onclick="window.open('/');">취소</button>
+			<button class="btn-lg col-3 login_btn">회원가입</button>
+
 		</form>
+	</div>
+	<div class="enter"></div>
 	</div>
 	<script type="text/javascript" src="/js/common/util.js"></script>
 	<script type="text/javascript" src="/js/member/join.js"></script>
