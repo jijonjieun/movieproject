@@ -6,10 +6,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>유저관리</title>
+<title>DREAM :: USERPAGE</title>
 <style type="text/css">
 body {
-background-color: white;
+	background-color: white;
+}
+
+#closebtn2 {
+	position: absolute;
+	top: 90px;
+	left: -180px;
+}
 }
 </style>
 <script src="../js/jquery-3.7.0.min.js"></script>
@@ -147,7 +154,8 @@ $(function() {
 		</tr>
 		<tr>
 			<td id="index">보유 포인트</td>
-			<td id="content"><fmt:formatNumber value="${myInfo.m_point}" pattern="#,###"/>
+			<td id="content"><fmt:formatNumber value="${myInfo.m_point}"
+					pattern="#,###" />
 				<button class="pbtn" type="button">포인트변경</button>
 				<form action="./pointChange" method="post" id="pointChangeForm"
 					style="display: none;">
@@ -155,8 +163,7 @@ $(function() {
 						value="${myInfo.m_point}"> <input type="hidden" name="mno"
 						value="${myInfo.m_no}">
 					<button class="submitBtn" type="submit">변경</button>
-				</form>
-			</td>
+				</form></td>
 		</tr>
 		<tr>
 			<td id="index">회원상태</td>
@@ -208,7 +215,7 @@ $(function() {
 				<div class="msg">
 					<span class="msg"></span>
 				</div>
-				<button type="button" id="close_btn2">뒤로가기</button>
+				<button type="button" id="closebtn2">뒤로가기</button>
 			</div>
 		</div>
 		<div class="modal_layer"></div>
@@ -223,7 +230,7 @@ $(function() {
 
 		});
 
-		$("#close_btn2").click(function() {
+		$("#closebtn2").click(function() {
 			$("#modal2").hide();
 		});
 

@@ -51,7 +51,7 @@ public class JoinDTO {
     
     
     @Pattern(regexp = "^(0[1-9]|[12][0-9]|3[01])$",
-            message = "유효한 생년월일을 입력해주세요.")
+            message = "정확한 날짜를 입력해주세요. 한자리일 경우 앞에 0을 붙여주세요.")
     @NotBlank(message = "일은 필수 항목입니다.")
     private String birthDay;
     
